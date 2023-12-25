@@ -39,6 +39,7 @@ def main():
     feed = feedparser.parse(url)
     pbar = tqdm(total=len(feed.entries))
     count = 0
+    contents = []
     for entry in feed.entries:
         pbar.update(1)
         title, idx, arxiv_category, updated = TITLE_PATTERN.match(entry.title).groups()
@@ -57,14 +58,15 @@ def main():
             tool_choice=tool_choice,
         )
         html_text = format_summary(entry, summary, category)
-        send_mail(
-            mail_title,
-            content=html_text,
-            login_address=login_address,
-            login_password=login_password,
-            address_list=mailing_list,
-        )
+        contents.append(html_text)
         count += 1
+    send_mail(
+        mail_title,
+        content="<br>\n".join(contents),
+        login_address=login_address,
+        login_password=login_password,
+        address_list=mailing_list,
+    )
     print(f"Summarized {count} papers out of {len(feed.entries)} papers.")
     pbar.close()
 
