@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "arxivpapercollect"
+version = "0.1.0"
+description = ""
+authors = ["aRySt0cat <ryuta.academic@gmail.com>"]
+readme = "README.md"
+include = ["./arxiv_gpt"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+notebook = "^7.0.6"
+feedparser = "^6.0.11"
+openai = "^1.6.1"
+tiktoken = "^0.5.2"
+python-dotenv = "^1.0.0"
+pyyaml = "^6.0.1"
+tqdm = "^4.66.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

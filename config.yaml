@@ -1,0 +1,13 @@
+arxiv_category: cs
+category:
+  LLM: 
+    - LLM
+    - Language Model
+  Diffusion Models:
+    - Diffusion
+    - Score-based
+items:
+  trend: これまでの流れを記載する
+  contribution: この論文の貢献を記載する
+mailing_list: 
+  - ryuta.shimogauchi@gmail.com
