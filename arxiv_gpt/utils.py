@@ -26,7 +26,7 @@ def format_authors(authors: list[dict[str, str]]) -> str:
 
 def format_summary(entry: dict, summary: dict[str, str], category: str) -> str:
     title_en, idx, arxiv_category, updated = TITLE_PATTERN.match(entry.title).groups()
-    text = f"<h2>{summary['title']}[{category}]</h2>"
+    text = f"<h2>{summary['title']} [{category}]</h2>"
     text += f'<h3><a href="{entry.link}">{title_en}</a></h3>'
     text += format_authors(entry.authors) + "<br>"
     summary.pop("title")
