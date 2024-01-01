@@ -1,6 +1,6 @@
 import re
 
-TITLE_PATTERN = re.compile(r"(.*) \(arXiv:(\d+.\d+v\d) \[(.*)\]\s*(.*)\)")
+TITLE_PATTERN = re.compile(r"(.*) \(arXiv:(\d+.\d+v\d+) \[(.*)\]\s*(.*)\)")
 
 ITEM_FORMAT = """\
 <h3>{heading}</h3>
